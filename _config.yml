@@ -1,21 +1,8 @@
-# Site settings
-title: dokkodo.xyz
-tagline: "The Way of Walking Alone"
-description: "A personal memoir exploring philosophies, ideas, and thoughts across money, meditations, music, and mountains."
+title: Dokkodo
+description: Money · Meditations · Music · Mountains
 url: "https://dokkodo.xyz"
 baseurl: ""
 
-# Author
-author:
-  name: ""
-  email: ""
-
-# Build settings
-markdown: kramdown
-highlighter: rouge
-permalink: /:categories/:title/
-
-# Collections for the four pillars
 collections:
   money:
     output: true
@@ -30,40 +17,13 @@ collections:
     output: true
     permalink: /mountains/:title/
 
-# Default front matter
 defaults:
   - scope:
       path: ""
-      type: "money"
     values:
-      layout: "post"
-      category: "money"
-  - scope:
-      path: ""
-      type: "meditations"
-    values:
-      layout: "post"
-      category: "meditations"
-  - scope:
-      path: ""
-      type: "music"
-    values:
-      layout: "post"
-      category: "music"
-  - scope:
-      path: ""
-      type: "mountains"
-    values:
-      layout: "post"
-      category: "mountains"
+      layout: "default"
 
-# Plugins
 plugins:
-  - jekyll-feed
   - jekyll-seo-tag
 
-# Exclude from build
-exclude:
-  - README.md
-  - Gemfile
-  - Gemfile.lock
+markdown: kramdown
