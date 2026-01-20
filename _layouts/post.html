@@ -1,18 +1,22 @@
 ---
 layout: default
 ---
-<article>
-  <header class="post-header">
-    <div class="container content-narrow">
-      <p class="post-category">{{ page.category }}</p>
-      <h1>{{ page.title }}</h1>
-      <p class="post-meta">{{ page.date | date: "%B %d, %Y" }}</p>
-    </div>
-  </header>
 
-  <div class="post-content">
-    <div class="container content-narrow">
-      {{ content }}
-    </div>
+<article class="article-content">
+  <a href="javascript:history.back()" class="back-link">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="19" y1="12" x2="5" y2="12"></line>
+      <polyline points="12 19 5 12 12 5"></polyline>
+    </svg>
+    Back
+  </a>
+  
+  <header class="article-header">
+    <h1 class="page-title">{{ page.title }}</h1>
+    <time class="post-date">{{ page.date | date: "%B %d, %Y" }}</time>
+  </header>
+  
+  <div class="article-body">
+    {{ content }}
   </div>
 </article>
