@@ -1,22 +1,75 @@
 ---
 layout: default
-title: About
+title: Dokkodo
 ---
-<section class="about-section">
-  <div class="container content-narrow">
-    <h1>About</h1>
-    <p>Welcome to dokkodo.xyz—a personal memoir exploring the intersections of money, meditations, music, and mountains.</p>
 
-    <h2>The Name</h2>
-    <p><em>Dokkōdō</em> (独行道), "The Path of Aloneness" or "The Way of Walking Alone," was written by Miyamoto Musashi shortly before his death in 1645. It consists of 21 precepts on self-discipline and independence—a guide for living deliberately.</p>
-
-    <h2>The Four Pillars</h2>
-    <p><strong>Money</strong> — Explorations in finance, markets, and the art of capital allocation.</p>
-    <p><strong>Meditations</strong> — Thoughts, learnings, and reflections on the journey.</p>
-    <p><strong>Music</strong> — The artists, albums, and sounds that move me.</p>
-    <p><strong>Mountains</strong> — Adventures in the wilderness and the lessons they teach.</p>
-
-    <h2>Connect</h2>
-    <p>Feel free to reach out via email or find me on Twitter.</p>
+<header class="hero">
+  <div class="logo">
+    <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="45" stroke="url(#gradient)" stroke-width="3" fill="none"/>
+      <path d="M50 20 L50 80 M30 50 L70 50" stroke="url(#gradient)" stroke-width="3" stroke-linecap="round"/>
+      <defs>
+        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#8b5cf6"/>
+          <stop offset="100%" stop-color="#06b6d4"/>
+        </linearGradient>
+      </defs>
+    </svg>
   </div>
-</section>
+  <h1 class="site-title">Dokkodo</h1>
+  <p class="tagline">The Way of Walking Alone</p>
+</header>
+
+<nav class="collection-grid">
+  <a href="/money/" class="card card-money">
+    <div class="card-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="1" x2="12" y2="23"></line>
+        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+      </svg>
+    </div>
+    <h2>Money</h2>
+    <p>Finance, markets, and building wealth</p>
+    <span class="card-count">{{ site.money.size }} posts</span>
+  </a>
+
+  <a href="/meditations/" class="card card-meditations">
+    <div class="card-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <path d="M12 16v-4M12 8h.01"></path>
+      </svg>
+    </div>
+    <h2>Meditations</h2>
+    <p>Thoughts, reflections, and inner work</p>
+    <span class="card-count">{{ site.meditations.size }} posts</span>
+  </a>
+
+  <a href="/music/" class="card card-music">
+    <div class="card-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 18V5l12-2v13"></path>
+        <circle cx="6" cy="18" r="3"></circle>
+        <circle cx="18" cy="16" r="3"></circle>
+      </svg>
+    </div>
+    <h2>Music</h2>
+    <p>Sound, rhythm, and sonic exploration</p>
+    <span class="card-count">{{ site.music.size }} posts</span>
+  </a>
+
+  <a href="/mountains/" class="card card-mountains">
+    <div class="card-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M8 3l4 8 5-5 5 15H2L8 3z"></path>
+      </svg>
+    </div>
+    <h2>Mountains</h2>
+    <p>Trails, peaks, and outdoor adventures</p>
+    <span class="card-count">{{ site.mountains.size }} posts</span>
+  </a>
+</nav>
+
+<footer class="footer">
+  <p>© {{ 'now' | date: "%Y" }} Dokkodo</p>
+</footer>
