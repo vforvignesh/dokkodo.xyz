@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<section class="hero" style="padding: 4rem 0;">
+  <div class="container">
+    <p class="hero-tagline">{{ page.tagline }}</p>
+    <h1 class="hero-title">{{ page.title }}</h1>
+    <p class="hero-description">{{ page.description }}</p>
+  </div>
+</section>
+
+<section class="posts-section" style="border-top: none;">
+  <div class="container">
+    <ul class="post-list">
+      {% assign posts = site[page.collection] | sort: 'date' | reverse %}
+      {% for post in posts %}
+      <li class="post-item">
+        <p class="post-meta">{{ post.date | date: "%b %d, %Y" }}</p>
+        <h3 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 160 }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

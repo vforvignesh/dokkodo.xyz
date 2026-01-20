@@ -1,0 +1,54 @@
+---
+layout: default
+---
+<section class="hero">
+  <div class="container">
+    <p class="hero-tagline">{{ site.tagline }}</p>
+    <h1 class="hero-title">dokkodo</h1>
+    <p class="hero-description">{{ site.description }}</p>
+  </div>
+</section>
+
+<section class="categories-section">
+  <div class="container">
+    <p class="section-title">Explore</p>
+    <div class="categories-grid">
+      <a href="{{ '/money/' | relative_url }}" class="category-card">
+        <div class="category-icon">◈</div>
+        <h2 class="category-name">Money</h2>
+        <p class="category-description">Finance, markets, stocks, portfolios, and trades.</p>
+      </a>
+      <a href="{{ '/meditations/' | relative_url }}" class="category-card">
+        <div class="category-icon">◉</div>
+        <h2 class="category-name">Meditations</h2>
+        <p class="category-description">Thoughts, learnings, reflections, and experiences.</p>
+      </a>
+      <a href="{{ '/music/' | relative_url }}" class="category-card">
+        <div class="category-icon">◎</div>
+        <h2 class="category-name">Music</h2>
+        <p class="category-description">Artists, albums, mixes, jams, and sonic explorations.</p>
+      </a>
+      <a href="{{ '/mountains/' | relative_url }}" class="category-card">
+        <div class="category-icon">△</div>
+        <h2 class="category-name">Mountains</h2>
+        <p class="category-description">Outdoor adventures and wilderness pursuits.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="posts-section">
+  <div class="container">
+    <p class="section-title">Recent</p>
+    <ul class="post-list">
+      {% assign all_posts = site.money | concat: site.meditations | concat: site.music | concat: site.mountains | sort: 'date' | reverse %}
+      {% for post in all_posts limit:5 %}
+      <li class="post-item">
+        <p class="post-meta">{{ post.date | date: "%b %d, %Y" }} · {{ post.category }}</p>
+        <h3 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 160 }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

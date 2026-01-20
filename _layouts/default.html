@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  {% feed_meta %}
+  {% seo %}
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="{{ '/' | relative_url }}" class="site-title">{{ site.title }}</a>
+        <nav class="site-nav">
+          <a href="{{ '/money/' | relative_url }}" {% if page.category == 'money' %}class="active"{% endif %}>money</a>
+          <a href="{{ '/meditations/' | relative_url }}" {% if page.category == 'meditations' %}class="active"{% endif %}>meditations</a>
+          <a href="{{ '/music/' | relative_url }}" {% if page.category == 'music' %}class="active"{% endif %}>music</a>
+          <a href="{{ '/mountains/' | relative_url }}" {% if page.category == 'mountains' %}class="active"{% endif %}>mountains</a>
+          <a href="{{ '/about/' | relative_url }}" {% if page.url == '/about/' %}class="active"{% endif %}>about</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-text">© {{ 'now' | date: '%Y' }} {{ site.title }}</span>
+        <div class="footer-links">
+          <a href="mailto:">email</a>
+          <a href="https://twitter.com/" target="_blank">twitter</a>
+          <a href="https://github.com/" target="_blank">github</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
