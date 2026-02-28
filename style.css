@@ -1,0 +1,223 @@
+/* style.css — Dokkodo Design System
+   Dark & Minimal, Paradigm-inspired
+   Custom palette: near-black foundation, muted sage accent */
+
+/* ============================================
+   TYPE SCALE (fluid with clamp)
+   ============================================ */
+:root {
+  --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
+  --text-sm:   clamp(0.875rem, 0.8rem  + 0.35vw, 1rem);
+  --text-base: clamp(1rem,     0.9rem  + 0.5vw,  1.125rem);
+  --text-lg:   clamp(1.125rem, 0.95rem + 0.85vw, 1.5rem);
+  --text-xl:   clamp(1.5rem,   1rem    + 1.5vw,  2.25rem);
+  --text-2xl:  clamp(2rem,     1.2rem  + 2.5vw,  3.5rem);
+  --text-3xl:  clamp(2.5rem,   1rem    + 4vw,    5rem);
+  --text-hero: clamp(3rem,     0.5rem  + 7vw,    8rem);
+}
+
+/* ============================================
+   4px SPACING SYSTEM
+   ============================================ */
+:root {
+  --space-1:  0.25rem;  /*  4px */
+  --space-2:  0.5rem;   /*  8px */
+  --space-3:  0.75rem;  /* 12px */
+  --space-4:  1rem;     /* 16px */
+  --space-5:  1.25rem;  /* 20px */
+  --space-6:  1.5rem;   /* 24px */
+  --space-8:  2rem;     /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+  --space-32: 8rem;     /* 128px */
+}
+
+/* ============================================
+   FONT FAMILIES
+   Display: Instrument Serif — editorial, confident
+   Body: Inter — premium, readable workhorse
+   Mono: JetBrains Mono — category labels, accents
+   ============================================ */
+:root {
+  --font-display: 'Instrument Serif', 'Georgia', serif;
+  --font-body: 'Inter', 'Helvetica Neue', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Menlo', monospace;
+}
+
+/* ============================================
+   CUSTOM DARK PALETTE — Dokkodo
+   Dark-first: near-black charcoal foundation
+   Accent: muted sage/teal (#4a8b7f)
+   ============================================ */
+
+/* DARK MODE (PRIMARY) */
+:root, [data-theme="dark"] {
+  /* --- Surfaces (Near-black charcoal) --- */
+  --color-bg:             #0c0c0c;
+  --color-surface:        #141414;
+  --color-surface-2:      #1a1a1a;
+  --color-surface-offset: #181818;
+  --color-surface-offset-2: #202020;
+  --color-surface-dynamic: #282828;
+  --color-divider:        rgba(255, 255, 255, 0.06);
+  --color-border:         rgba(255, 255, 255, 0.08);
+
+  /* --- Text (Warm off-white / grays) --- */
+  --color-text:           #e5e5e0;
+  --color-text-muted:     #8a8a85;
+  --color-text-faint:     #555550;
+  --color-text-inverse:   #0c0c0c;
+
+  /* --- Primary Accent (Muted sage/teal) --- */
+  --color-primary:        #4a8b7f;
+  --color-primary-hover:  #5ca394;
+  --color-primary-active: #3d756a;
+  --color-primary-highlight: rgba(74, 139, 127, 0.12);
+
+  /* --- Semantic: Error --- */
+  --color-error:          #c45c5c;
+  --color-error-hover:    #d47070;
+  --color-error-active:   #a94a4a;
+
+  /* --- Semantic: Success --- */
+  --color-success:        #5a9a6a;
+  --color-success-hover:  #6daa7a;
+  --color-success-active: #4a8a5a;
+
+  /* --- Semantic: Warning --- */
+  --color-warning:        #c4944a;
+  --color-warning-hover:  #d4a45a;
+  --color-warning-active: #b4843a;
+
+  /* --- Radius --- */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-full: 9999px;
+
+  /* --- Transitions --- */
+  --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* --- Shadows (dark mode: subtle, low opacity) --- */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.5);
+
+  /* --- Content widths --- */
+  --content-narrow: 640px;
+  --content-default: 960px;
+  --content-wide: 1200px;
+  --content-full: 100%;
+}
+
+/* ============================================
+   LIGHT MODE (warm cream/off-white)
+   ============================================ */
+[data-theme="light"] {
+  /* --- Surfaces (Warm cream) --- */
+  --color-bg:             #f5f4f0;
+  --color-surface:        #faf9f6;
+  --color-surface-2:      #ffffff;
+  --color-surface-offset: #eeeee8;
+  --color-surface-offset-2: #e8e7e2;
+  --color-surface-dynamic: #ddddd7;
+  --color-divider:        rgba(0, 0, 0, 0.08);
+  --color-border:         rgba(0, 0, 0, 0.1);
+
+  /* --- Text (Dark charcoal) --- */
+  --color-text:           #1a1a18;
+  --color-text-muted:     #6b6b66;
+  --color-text-faint:     #a5a5a0;
+  --color-text-inverse:   #f5f4f0;
+
+  /* --- Primary Accent (Muted sage/teal — slightly deeper for light bg) --- */
+  --color-primary:        #3d7a6f;
+  --color-primary-hover:  #2e6b60;
+  --color-primary-active: #245c52;
+  --color-primary-highlight: rgba(61, 122, 111, 0.1);
+
+  /* --- Semantic: Error --- */
+  --color-error:          #a94040;
+  --color-error-hover:    #903535;
+  --color-error-active:   #782a2a;
+
+  /* --- Semantic: Success --- */
+  --color-success:        #3a7a4a;
+  --color-success-hover:  #2e6a3e;
+  --color-success-active: #245a34;
+
+  /* --- Semantic: Warning --- */
+  --color-warning:        #a07830;
+  --color-warning-hover:  #8a6828;
+  --color-warning-active: #745820;
+
+  /* --- Shadows (warm-tinted for light surfaces) --- */
+  --shadow-sm: 0 1px 2px rgba(26, 26, 24, 0.06);
+  --shadow-md: 0 4px 12px rgba(26, 26, 24, 0.08);
+  --shadow-lg: 0 12px 32px rgba(26, 26, 24, 0.12);
+}
+
+/* ============================================
+   GLOBAL STYLES
+   ============================================ */
+
+/* Links */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-interactive);
+}
+a:hover {
+  color: var(--color-primary-hover);
+}
+
+/* Noise texture overlay — subtle film grain */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 9999;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Mono labels — category tags, uppercase accents */
+.mono-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-text-muted);
+}
+
+/* Scroll reveal animations */
+.fade-in {
+  opacity: 1;
+}
+
+@supports (animation-timeline: scroll()) {
+  .fade-in {
+    opacity: 0;
+    animation: reveal-fade linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 100%;
+  }
+}
+
+@keyframes reveal-fade {
+  to { opacity: 1; }
+}
+
+/* Staggered fade — JS-driven */
+.stagger-in {
+  opacity: 0;
+  transition: opacity 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.stagger-in.visible {
+  opacity: 1;
+}
